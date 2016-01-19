@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Station created at</th>
+      <th>Temperature in</th>
+      <th>Temperature out</th>
+      <th>Humidity in</th>
+      <th>Humidity out</th>
+      <th>Pressure absolute</th>
+      <th>Pressure relative</th>
+      <th>Wind direction</th>
+      <th>Wind speed</th>
+      <th>Wind gust</th>
+      <th>Solar radiation</th>
+      <th>Solar uv</th>
+      <th>Solar uvi</th>
+      <th>Rainfall hourly</th>
+      <th>Rainfall daily</th>
+      <th>Rainfall weekly</th>
+      <th>Rainfall monthly</th>
+      <th>Rainfall yearly</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.station_created_at %></td>
+        <td><%= event.temperature_in %></td>
+        <td><%= event.temperature_out %></td>
+        <td><%= event.humidity_in %></td>
+        <td><%= event.humidity_out %></td>
+        <td><%= event.pressure_absolute %></td>
+        <td><%= event.pressure_relative %></td>
+        <td><%= event.wind_direction %></td>
+        <td><%= event.wind_speed %></td>
+        <td><%= event.wind_gust %></td>
+        <td><%= event.solar_radiation %></td>
+        <td><%= event.solar_uv %></td>
+        <td><%= event.solar_uvi %></td>
+        <td><%= event.rainfall_hourly %></td>
+        <td><%= event.rainfall_daily %></td>
+        <td><%= event.rainfall_weekly %></td>
+        <td><%= event.rainfall_monthly %></td>
+        <td><%= event.rainfall_yearly %></td>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event', new_event_path %>

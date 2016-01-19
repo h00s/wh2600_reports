@@ -1,0 +1,94 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Station created at:</strong>
+  <%= @event.station_created_at %>
+</p>
+
+<p>
+  <strong>Temperature in:</strong>
+  <%= @event.temperature_in %>
+</p>
+
+<p>
+  <strong>Temperature out:</strong>
+  <%= @event.temperature_out %>
+</p>
+
+<p>
+  <strong>Humidity in:</strong>
+  <%= @event.humidity_in %>
+</p>
+
+<p>
+  <strong>Humidity out:</strong>
+  <%= @event.humidity_out %>
+</p>
+
+<p>
+  <strong>Pressure absolute:</strong>
+  <%= @event.pressure_absolute %>
+</p>
+
+<p>
+  <strong>Pressure relative:</strong>
+  <%= @event.pressure_relative %>
+</p>
+
+<p>
+  <strong>Wind direction:</strong>
+  <%= @event.wind_direction %>
+</p>
+
+<p>
+  <strong>Wind speed:</strong>
+  <%= @event.wind_speed %>
+</p>
+
+<p>
+  <strong>Wind gust:</strong>
+  <%= @event.wind_gust %>
+</p>
+
+<p>
+  <strong>Solar radiation:</strong>
+  <%= @event.solar_radiation %>
+</p>
+
+<p>
+  <strong>Solar uv:</strong>
+  <%= @event.solar_uv %>
+</p>
+
+<p>
+  <strong>Solar uvi:</strong>
+  <%= @event.solar_uvi %>
+</p>
+
+<p>
+  <strong>Rainfall hourly:</strong>
+  <%= @event.rainfall_hourly %>
+</p>
+
+<p>
+  <strong>Rainfall daily:</strong>
+  <%= @event.rainfall_daily %>
+</p>
+
+<p>
+  <strong>Rainfall weekly:</strong>
+  <%= @event.rainfall_weekly %>
+</p>
+
+<p>
+  <strong>Rainfall monthly:</strong>
+  <%= @event.rainfall_monthly %>
+</p>
+
+<p>
+  <strong>Rainfall yearly:</strong>
+  <%= @event.rainfall_yearly %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

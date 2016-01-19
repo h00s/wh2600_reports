@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  station_created_at: 2016-01-19 01:02:21
+  temperature_in: 9.99
+  temperature_out: 9.99
+  humidity_in: 1
+  humidity_out: 1
+  pressure_absolute: 9.99
+  pressure_relative: 9.99
+  wind_direction: 1
+  wind_speed: 9.99
+  wind_gust: 9.99
+  solar_radiation: 9.99
+  solar_uv: 1
+  solar_uvi: 1
+  rainfall_hourly: 9.99
+  rainfall_daily: 9.99
+  rainfall_weekly: 9.99
+  rainfall_monthly: 9.99
+  rainfall_yearly: 9.99
+
+two:
+  station_created_at: 2016-01-19 01:02:21
+  temperature_in: 9.99
+  temperature_out: 9.99
+  humidity_in: 1
+  humidity_out: 1
+  pressure_absolute: 9.99
+  pressure_relative: 9.99
+  wind_direction: 1
+  wind_speed: 9.99
+  wind_gust: 9.99
+  solar_radiation: 9.99
+  solar_uv: 1
+  solar_uvi: 1
+  rainfall_hourly: 9.99
+  rainfall_daily: 9.99
+  rainfall_weekly: 9.99
+  rainfall_monthly: 9.99
+  rainfall_yearly: 9.99
