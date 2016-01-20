@@ -1,62 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Events</h1>
+<h1>Weather station</h1>
 
 <div class="row">
   <div class="col-md-12">
-    <div id='chart' class=""></div>
-    <%= render_chart(@chart, 'chart') %>
+    <div id='chart_temperature' class=""></div>
+    <%= render_chart(@chart_temperature, 'chart_temperature') %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div id='chart_pressure' class=""></div>
+    <%= render_chart(@chart_pressure, 'chart_pressure') %>
   </div>
 </div>
 
-<table class="table table-striped table-condensed">
-  <thead>
-    <tr>
-      <th>Station created at</th>
-      <th>Temperature in</th>
-      <th>Temperature out</th>
-      <th>Humidity in</th>
-      <th>Humidity out</th>
-      <th>Pressure absolute</th>
-      <th>Pressure relative</th>
-      <th>Wind direction</th>
-      <th>Wind speed</th>
-      <th>Wind gust</th>
-      <th>Solar radiation</th>
-      <th>Solar uv</th>
-      <th>Solar uvi</th>
-      <th>Rainfall hourly</th>
-      <th>Rainfall daily</th>
-      <th>Rainfall weekly</th>
-      <th>Rainfall monthly</th>
-      <th>Rainfall yearly</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.station_created_at %></td>
-        <td><%= event.temperature_in %></td>
-        <td><%= event.temperature_out %></td>
-        <td><%= event.humidity_in %></td>
-        <td><%= event.humidity_out %></td>
-        <td><%= event.pressure_absolute %></td>
-        <td><%= event.pressure_relative %></td>
-        <td><%= event.wind_direction %></td>
-        <td><%= event.wind_speed %></td>
-        <td><%= event.wind_gust %></td>
-        <td><%= event.solar_radiation %></td>
-        <td><%= event.solar_uv %></td>
-        <td><%= event.solar_uvi %></td>
-        <td><%= event.rainfall_hourly %></td>
-        <td><%= event.rainfall_daily %></td>
-        <td><%= event.rainfall_weekly %></td>
-        <td><%= event.rainfall_monthly %></td>
-        <td><%= event.rainfall_yearly %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>

@@ -5,19 +5,28 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.where('created_at >= ?', 1.day.ago).order(created_at: :desc)
-    data_table = GoogleVisualr::DataTable.new
-    data_table.new_column('string', 'Vrijeme' )
-    data_table.new_column('number', 'Temperatura °C')
+    data_table_temperature = GoogleVisualr::DataTable.new
+    data_table_temperature.new_column('string', 'Vrijeme' )
+    data_table_temperature.new_column('number', 'Temperatura °C')
 
-    data_rows = []
+    data_table_pressure = GoogleVisualr::DataTable.new
+    data_table_pressure.new_column('string', 'Vrijeme' )
+    data_table_pressure.new_column('number', 'Pritisak hPa')
+
+    data_rows_temperature = []
+    data_rows_pressure = []
     @events.each do |event|
-      data_rows.push([event.created_at.to_s, event.temperature_out])
+      data_rows_temperature.push([event.created_at.to_s, event.temperature_out])
+      if event.pressure_absolute > 700
+        data_rows_pressure.push([event.created_at.to_s, event.pressure_absolute])
+      end
     end
 
-    data_table.add_rows(data_rows)
+    data_table_temperature.add_rows(data_rows_temperature)
+    data_table_pressure.add_rows(data_rows_pressure)
 
-    option = { title: 'Temperature' }
-    @chart = GoogleVisualr::Interactive::LineChart.new(data_table, option)
+    @chart_temperature = GoogleVisualr::Interactive::LineChart.new(data_table_temperature, { title: 'Temperatura' })
+    @chart_pressure = GoogleVisualr::Interactive::LineChart.new(data_table_pressure, { title: 'Pritisak' })
   end
 
   # GET /events/1
