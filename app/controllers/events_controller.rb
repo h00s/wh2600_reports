@@ -4,7 +4,20 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.order(created_at: :desc).limit(100)
+    @events = Event.where('created_at >= ?', 1.day.ago).order(created_at: :desc)
+    data_table = GoogleVisualr::DataTable.new
+    data_table.new_column('string', 'Vrijeme' )
+    data_table.new_column('number', 'Temperatura °C')
+
+    data_rows = []
+    @events.each do |event|
+      data_rows.push([event.created_at.to_s, event.temperature_out])
+    end
+
+    data_table.add_rows(data_rows)
+
+    option = { title: 'Temperature' }
+    @chart = GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
   # GET /events/1
