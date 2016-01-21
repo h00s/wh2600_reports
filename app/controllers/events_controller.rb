@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.where('created_at >= ?', 1.day.ago).order(created_at: :desc)
+    @events = Event.where('created_at >= ?', 1.day.ago).order(:created_at)
     data_table_temperature = GoogleVisualr::DataTable.new
     data_table_temperature.new_column('string', 'Vrijeme' )
     data_table_temperature.new_column('number', 'Temperatura °C')
