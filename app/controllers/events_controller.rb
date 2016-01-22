@@ -17,9 +17,7 @@ class EventsController < ApplicationController
     data_rows_pressure = []
     @events.each do |event|
       data_rows_temperature.push([event.created_at.to_s, event.temperature_out])
-      if event.pressure_absolute > 700
-        data_rows_pressure.push([event.created_at.to_s, event.pressure_absolute])
-      end
+      data_rows_pressure.push([event.created_at.to_s, event.pressure_absolute])
     end
 
     data_table_temperature.add_rows(data_rows_temperature)
