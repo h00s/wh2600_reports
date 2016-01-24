@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Weather station</h1>
+<div class="row">
+  <div class="col-md-4">
+    <p>Temperatura: <b><%= Event.last.temperature_out %> °C</b></p>
+  </div>
+  <div class="col-md-4">
+    <p>Vlažnost: <b><%= Event.last.humidity_out %> %</b></p>
+  </div>
+  <div class="col-md-4">
+    <p>Pritisak: <b><%= Event.last.pressure_absolute %> hPa</b></p>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-md-12">
@@ -8,6 +18,7 @@
     <%= render_chart(@chart_temperature, 'chart_temperature') %>
   </div>
 </div>
+
 <div class="row">
   <div class="col-md-12">
     <div id='chart_pressure' class=""></div>
