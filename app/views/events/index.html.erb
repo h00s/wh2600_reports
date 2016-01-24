@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <p>Temperatura: <b><%= Event.last.temperature_out %> °C</b></p>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <p>Vlažnost: <b><%= Event.last.humidity_out %> %</b></p>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <p>Pritisak: <b><%= Event.last.pressure_absolute %> hPa</b></p>
+  </div>
+  <div class="col-md-3">
+    <p><b><%= time_ago_in_words(Event.last.created_at) %></b></p>
   </div>
 </div>
 
