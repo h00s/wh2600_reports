@@ -24,6 +24,13 @@
 
 <div class="row">
   <div class="col-md-12">
+    <div id='chart_humidity' class=""></div>
+    <%= render_chart(@chart_humidity, 'chart_humidity') %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
     <div id='chart_pressure' class=""></div>
     <%= render_chart(@chart_pressure, 'chart_pressure') %>
   </div>

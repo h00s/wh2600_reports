@@ -9,21 +9,29 @@ class EventsController < ApplicationController
     data_table_temperature.new_column('string', 'Vrijeme' )
     data_table_temperature.new_column('number', 'Temperatura °C')
 
+    data_table_humidity = GoogleVisualr::DataTable.new
+    data_table_humidity.new_column('string', 'Vrijeme' )
+    data_table_humidity.new_column('number', 'Vlažnost %')
+
     data_table_pressure = GoogleVisualr::DataTable.new
     data_table_pressure.new_column('string', 'Vrijeme' )
     data_table_pressure.new_column('number', 'Pritisak hPa')
 
     data_rows_temperature = []
+    data_rows_humidity = []
     data_rows_pressure = []
     @events.each do |event|
       data_rows_temperature.push([event.created_at.to_s, event.temperature_out])
+      data_rows_humidity.push([event.created_at.to_s, event.humidity_out])
       data_rows_pressure.push([event.created_at.to_s, event.pressure_absolute])
     end
 
     data_table_temperature.add_rows(data_rows_temperature)
+    data_table_humidity.add_rows(data_rows_humidity)
     data_table_pressure.add_rows(data_rows_pressure)
 
     @chart_temperature = GoogleVisualr::Interactive::LineChart.new(data_table_temperature, { title: 'Temperatura' })
+    @chart_humidity = GoogleVisualr::Interactive::LineChart.new(data_table_humidity, { title: 'Vlažnost zraka' })
     @chart_pressure = GoogleVisualr::Interactive::LineChart.new(data_table_pressure, { title: 'Pritisak' })
   end
 
