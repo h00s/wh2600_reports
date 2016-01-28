@@ -30,9 +30,9 @@ class EventsController < ApplicationController
     data_table_humidity.add_rows(data_rows_humidity)
     data_table_pressure.add_rows(data_rows_pressure)
 
-    @chart_temperature = GoogleVisualr::Interactive::LineChart.new(data_table_temperature, { title: 'Temperatura' })
-    @chart_humidity = GoogleVisualr::Interactive::LineChart.new(data_table_humidity, { title: 'Vlažnost zraka' })
-    @chart_pressure = GoogleVisualr::Interactive::LineChart.new(data_table_pressure, { title: 'Pritisak' })
+    @chart_temperature = GoogleVisualr::Interactive::LineChart.new(data_table_temperature, { title: 'Temperatura', series: { '0': { color: '#e2431e'} } })
+    @chart_humidity = GoogleVisualr::Interactive::LineChart.new(data_table_humidity, { title: 'Vlažnost zraka', series: { '0': { color: '#6f9654'} } })
+    @chart_pressure = GoogleVisualr::Interactive::LineChart.new(data_table_pressure, { title: 'Pritisak', series: { '0': { color: '#1c91c0'} } })
   end
 
   # GET /events/1
