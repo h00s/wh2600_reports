@@ -11,7 +11,7 @@
     <p>Pritisak: <b><%= Event.last.pressure_absolute %> hPa</b></p>
   </div>
   <div class="col-md-3">
-    <p><b><%= time_ago_in_words(Event.last.created_at) %></b></p>
+    <p>prije <b><%= time_ago_in_words(Event.last.created_at) %></b></p>
   </div>
 </div>
 
